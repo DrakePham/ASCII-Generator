@@ -1,13 +1,10 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const figlet_1 = __importDefault(require("figlet"));
+const figlet = require('figlet');
 // Function to generate ASCII art
 const generateASCIIArt = (text, font = 'Standard') => {
     return new Promise((resolve, reject) => {
-        figlet_1.default.text(text, { font: font }, (err, data) => {
+        figlet.text(text, { font: font }, (err, data) => {
             if (err) {
                 reject(`Error generating ASCII art: ${err.message}`);
             }
@@ -17,7 +14,6 @@ const generateASCIIArt = (text, font = 'Standard') => {
         });
     });
 };
-// Example usage
 const main = async () => {
     const text = "Hello World!";
     const font = "Slant"; // Specify font as a valid Fonts type
@@ -30,4 +26,3 @@ const main = async () => {
     }
 };
 main();
-//# sourceMappingURL=asciiGenerator.js.map
